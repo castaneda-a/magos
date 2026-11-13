@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+#container{
+    position: relative;
+}
+#canvas{
+    position: absolute;
+}
+#interface{
+    position: absolute;
+    border: 4px #559d9e solid;
+    border-radius: 8px;
+    background-color: #417879;
+    width: 35%;
+    display: none;
+}
+#matrix{
+    width: 100%;
+    padding: 2%;
+}
+td{
+    padding: 2%;
+}
+.matrixInput {
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  width: 100%;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f6f8f5;
+  color: #0d0c22;
+  box-shadow: 0 0 5px #9db09b, 0 0 0 5px #f5f5f5eb;
+  transition: .3s ease;
+}
+#showInterface {
+ width: 10em;
+ margin: 2%;
+ color: rgb(26, 48, 23);
+ background-color: rgb(156, 213, 120);
+ height: 3em;
+ border-radius: 30em;
+ font-size: 15px;
+ font-family: Verdana;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 3px 3px 12px #797455,
+             -3px -3px 12px #797455;
+}
+#showInterface::before {
+ content: '';
+ width: 0;
+ height: 3em;
+ border-radius: 30em;
+ position: absolute;
+ top: 0;
+ left: 0;
+ background-image: linear-gradient(to right, #0f7dd8 0%, #f9f047 100%);
+ transition: .5s ease;
+ display: inline-block;
+ z-index: -1;
+}
+#showInterface:hover::before {
+ width: 10em;
+}
+.interfaceButton{
+    width: 10em;
+    margin: 2%;
+    color: rgb(254, 254, 254);
+    background-color: #578e9c;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: Verdana;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 1px 1px 6px #45717b,
+             -1px -1px 6px #45717b;
+}
+.interfaceButton:hover{
+    background-color: #3b616b;
+}
+#redo{
+    color: #436e79;
+    background-color: #3b616b;
+}
+#undo{
+    color: #436e79;
+    background-color: #3b616b;
+}

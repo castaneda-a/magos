@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(64, 64, 64);
+}
+#canvas{
+    border: 2px solid rgb(32, 32, 32);
+    display: inline-block;
+    width: 80%;
+    height: 40%;
+}
+#controles {
+    border: 2px solid rgb(32, 32, 32);
+    display: inline-block;
+    position: absolute;
+    right: 1%;
+    width: 18%;
+    height: 53.5%;
+}
+#matriz {
+    border: 2px solid rgb(32, 32, 32);
+    /* border-collapse: collapse; */
+    position: absolute;
+    display: inline-block;
+    width: 18.25%;
+    margin-left: 0.8%;
+    height: 13.3%;
+    bottom: 18.5%;
+}
+#rotacion {
+    border: 2px solid rgb(32, 32, 32);
+    /* border-collapse: collapse; */
+    position: absolute;
+    display: inline-block;
+    width: 18.25%;
+    margin-left: 0.8%;
+    height: 13.4%;
+    bottom: 31.5%;
+}
+.matrixInput {
+    width: 89.5%;
+}
+.rotationInput {
+    width: 130.5%;
+}
+p {
+    color: #FFFFFF;
+}
+.boton {
+    background-color: #006852;
+    border-color: #006852;
+    color: #FFFFFF;
+    display: block;
+    align-items: center;
+    width: 96%;
+    height: 12.8%;
+    margin: 2%;
+}
+#demo2d {
+    background-color: #004334;
+    border-color: #004334;
+}
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformacion Lineal 3D</title>
+  <link rel="stylesheet" href="plano3d_style.css">
+  <script defer src="plano3d_code.js"></script>
+</head>
+<body>
+  <canvas id="canvas" width="1200" height="600">Plano carteciano que se transforma</canvas>
+
+  <div id="controles">
+    <button class="boton" id="zoomIn">+Zoom</button>
+    <button class="boton" id="zoomOut">-Zoom</buttons>
+    <button class="boton" id="reset">Resetear</buttons>
+    <button class="boton" id="rotationOrder">Actual orden de rotación: X->Y->Z</buttons>
+    <button class="boton" id="rotate">Rotar Perspectiva</buttons>
+    <button class="boton" id="transform">Transformar Cubo</buttons>
+    <a href="plano2d.html"><button class="boton" id="demo2d">Transformaciones en 2D</buttons></a>
+  </div>
+  <table id="rotacion">
+    <tr>
+      <td><input class="rotationInput" type="text" list="valoresComunesRadianes" name="rX" placeholder="radianes-x"/></td>
+    </tr>
+    <tr>
+      <td><input class="rotationInput" type="text" list="valoresComunesRadianes" name="rY" placeholder="radianes-y"/></td>
+    </tr>
+    <tr>
+      <td><input class="rotationInput" type="text" list="valoresComunesRadianes" name="rZ" placeholder="radianes-z"/></td>
+    </tr>
+  </table>
+  <table id="matriz">
+    <tr>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a11" placeholder="a11"/></td>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a12" placeholder="a12"/></td>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a13" placeholder="a13"/></td>
+    </tr>
+    <tr>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a21" placeholder="a21"/></td>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a22" placeholder="a22"/></td>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a23" placeholder="a23"/></td>
+    </tr>
+    <tr>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a31" placeholder="a31"/></td>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a32" placeholder="a32"/></td>
+      <td><input class="matrixInput" type="text" list="valoresComunesMatriz" name="a33" placeholder="a33"/></td>
+    </tr>
+  </table>
+
+  <datalist id="valoresComunesMatriz">
+    <option value="1.41421356237">sqrt(2)</option>
+    <option value="0.70710678118">sqrt(2)/2</option>
+    <option value="1.73205080757">sqrt(3)</option>
+    <option value="0.86602540378">sqrt(3)/2</option>
+    <option value="0.5">1/2</option>
+    <option value="0.33333333333">1/3</option>
+    <option value="0.25">1/4</option>
+    <option value="0.2">1/5</option>
+    <option value="0.16666666666">1/6</option>
+    <option value="0.125">1/8</option>
+    <option value="0.1">1/10</option>
+  </datalist>
+
+  <datalist id="valoresComunesRadianes">
+    <option value="3.141592654">pi</option>
+    <option value="1.570796327">pi/2</option>
+    <option value="1.047197551">pi/3</option>
+    <option value="0.7853981634">pi/4</option>
+    <option value="0.5235987756">pi/6</option>
+  </datalist>
+
+  <p>
+    Notas:<br/>
+      1.- El botón de "Actual orden de rotación" representa la prioridad de rotacion por eje. 
+    Por ejemplo, si el orden marcado es "X->Y->Z", se hara primero la rotación en el eje X, luego 
+    el en el eje Y y finalmente en el eje Z.<br/>
+      2.- El boton de rotar perspectiva no es lo mismo que aplicar una matriz de rotación. Cambiar 
+    la perspectiva implica cambiar la base y la matriz de proyección (sobre la que se construye el cubo), 
+    la transformación cambia los datos del cubo en sí, sin tocar la base o la matriz de proyección.
+  </p>
+</body>
+</html>

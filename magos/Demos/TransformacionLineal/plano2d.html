@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformacion Lineal 2D</title>
+  <link rel="stylesheet" href="plano2d_style.css">
+  <script defer src="plano2d_code.js"></script>
+</head>
+<body>
+  <canvas id="canvas" width="1200" height="600">Plano carteciano que se transforma</canvas>
+
+  <div id="controles">
+    <button class="boton" id="zoomIn">+Zoom</button>
+    <button class="boton" id="zoomOut">-Zoom</buttons>
+    <button class="boton" id="determinant">Mostrar determinante</button>
+    <button class="boton" id="reset">Resetear</buttons>
+    <button class="boton" id="rotate">Rotar por radianes</buttons>
+    <button class="boton" id="transform">Transformar con matriz colocada</buttons>
+    <button class="boton" id="revert">Transformar con inversa de matriz colocada</buttons>
+    <a href="plano3d.html"><button class="boton" id="demo3d">Transformaciones en 3D</buttons></a>
+  </div>
+  <table>
+    <tr>
+      <td><input type="text" list="valoresComunesMatriz" name="a11" class="mNum" placeholder="a11"/></td>
+      <td><input type="text" list="valoresComunesMatriz" name="a12" class="mNum" placeholder="a12"/></td>
+    </tr>
+    <tr>
+      <td><input type="text" list="valoresComunesMatriz" name="a21" class="mNum" placeholder="a21"/></td>
+      <td><input type="text" list="valoresComunesMatriz" name="a22" class="mNum" placeholder="a22"/></td>
+    </tr>
+  </table>
+
+  <datalist id="valoresComunesMatriz">
+    <option value="1.41421356237">sqrt(2)</option>
+    <option value="0.70710678118">sqrt(2)/2</option>
+    <option value="1.73205080757">sqrt(3)</option>
+    <option value="0.86602540378">sqrt(3)/2</option>
+    <option value="0.5">1/2</option>
+    <option value="0.33333333333">1/3</option>
+    <option value="0.25">1/4</option>
+    <option value="0.2">1/5</option>
+    <option value="0.16666666666">1/6</option>
+    <option value="0.125">1/8</option>
+    <option value="0.1">1/10</option>
+  </datalist>
+
+  <datalist id="valoresComunesRadianes">
+    <option value="3.141592654">pi</option>
+    <option value="1.570796327">pi/2</option>
+    <option value="1.047197551">pi/3</option>
+    <option value="0.7853981634">pi/4</option>
+    <option value="0.5235987756">pi/6</option>
+  </datalist>
+
+  <p>
+    Notas:<br/>
+      1.- Al aplicar matrices de rotación (debido a la función de transición), el plano tiende a achicarse durante el proceso de rotado y, además, otro 
+    problema es que ciertas matrices (por ejemplo la matriz [[-1,0],[0,-1]]) se
+    ve como una reflexión durante la animación, en vez de verse como la rotación de
+    180 grados que en realidad es.<br/>
+      2.- Debido a que se usa la matriz de cofactores para calcular la inversa de la
+    matriz colocada, es recomendado usar matrices con determinantes >> 0 a
+    la hora de usar esta función. Esto garantiza la estabilidad numérica 
+    (o que directamente no explote cuando el det(matriz) = 0).
+  </p>
+</body>
+</html>
